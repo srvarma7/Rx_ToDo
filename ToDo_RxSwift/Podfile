@@ -6,7 +6,7 @@ target 'ToDo_RxSwift' do
   use_frameworks!
 
   # Pods for ToDo_RxSwift
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
 
 end

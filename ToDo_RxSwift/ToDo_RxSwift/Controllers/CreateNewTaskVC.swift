@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import RxSwift
 
 class CreateNewTaskVC: UIViewController {
     
     @IBOutlet weak var priorityControl: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    
+    private let taskSubject = PublishSubject<Task>()
+    var taskSubjectObservable: Observable<Task> {
+        return taskSubject.asObservable()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +32,9 @@ class CreateNewTaskVC: UIViewController {
               let text     = textField.text else { return }
         
         let task = Task(task: text, priority: priority)
+        taskSubject.onNext(task)
         
-        
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onCloseBtnTapped() {
