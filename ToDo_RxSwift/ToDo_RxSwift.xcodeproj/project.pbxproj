@@ -14,6 +14,7 @@
 		80A3CEC624E60FC9001F9EE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A3CEC524E60FC9001F9EE2 /* Assets.xcassets */; };
 		80A3CEC924E60FC9001F9EE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A3CEC724E60FC9001F9EE2 /* LaunchScreen.storyboard */; };
 		80A3CED324E6156D001F9EE2 /* ToDo_ViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3CED224E6156D001F9EE2 /* ToDo_ViewCell.swift */; };
+		80A3CED524E61706001F9EE2 /* CreateNewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A3CED424E61706001F9EE2 /* CreateNewTaskVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		80A3CEC824E60FC9001F9EE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80A3CECA24E60FC9001F9EE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80A3CED224E6156D001F9EE2 /* ToDo_ViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_ViewCell.swift; sourceTree = "<group>"; };
+		80A3CED424E61706001F9EE2 /* CreateNewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				80A3CEC024E60FC4001F9EE2 /* HomeToDoViewController.swift */,
+				80A3CED424E61706001F9EE2 /* CreateNewTaskVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				80A3CEC124E60FC4001F9EE2 /* HomeToDoViewController.swift in Sources */,
 				80A3CEBD24E60FC4001F9EE2 /* AppDelegate.swift in Sources */,
+				80A3CED524E61706001F9EE2 /* CreateNewTaskVC.swift in Sources */,
 				80A3CED324E6156D001F9EE2 /* ToDo_ViewCell.swift in Sources */,
 				80A3CEBF24E60FC4001F9EE2 /* SceneDelegate.swift in Sources */,
 			);

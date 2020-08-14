@@ -55,7 +55,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDo" id="cgm-Sk-H8Q">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BGu-gH-ccA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BGu-gH-ccA">
+                            <connections>
+                                <segue destination="Qs5-mc-D9d" kind="presentation" id="j1D-oi-dy4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="J8P-D9-Jr2" id="mWb-TU-epb"/>
@@ -66,16 +70,79 @@
             </objects>
             <point key="canvasLocation" x="938" y="120"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Task-->
         <scene sceneID="eXd-ka-bFi">
             <objects>
-                <viewController id="Qs5-mc-D9d" sceneMemberID="viewController">
+                <viewController id="Qs5-mc-D9d" customClass="CreateNewTaskVC" customModule="ToDo_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9IP-mA-XwI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tCe-Yv-Zmm">
+                                <rect key="frame" x="84.5" y="80" width="206" height="32"/>
+                                <segments>
+                                    <segment title="High"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Low"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5O-Sl-pqP">
+                                <rect key="frame" x="20" y="151" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FI0-HR-GT5">
+                                <rect key="frame" x="80" y="205" width="215" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveBtnTapped" destination="Qs5-mc-D9d" eventType="touchUpInside" id="oQt-nS-ZhS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOZ-gJ-clE">
+                                <rect key="frame" x="80" y="245" width="215" height="30"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCloseBtnTapped" destination="Qs5-mc-D9d" eventType="touchUpInside" id="ARH-RR-6UY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdt-kd-jFk">
+                                <rect key="frame" x="100" y="20" width="175" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zdt-kd-jFk" firstAttribute="leading" secondItem="V8K-m4-YtJ" secondAttribute="leading" constant="100" id="3Wb-qE-mxb"/>
+                            <constraint firstItem="VOZ-gJ-clE" firstAttribute="leading" secondItem="V8K-m4-YtJ" secondAttribute="leading" constant="80" id="5Hh-Lr-YLE"/>
+                            <constraint firstItem="FI0-HR-GT5" firstAttribute="top" secondItem="p5O-Sl-pqP" secondAttribute="bottom" constant="20" id="Ahb-sw-wEJ"/>
+                            <constraint firstItem="V8K-m4-YtJ" firstAttribute="trailing" secondItem="Zdt-kd-jFk" secondAttribute="trailing" constant="100" id="Dis-3a-5Fl"/>
+                            <constraint firstItem="tCe-Yv-Zmm" firstAttribute="centerX" secondItem="9IP-mA-XwI" secondAttribute="centerX" id="Ds8-Vw-Ptf"/>
+                            <constraint firstItem="FI0-HR-GT5" firstAttribute="leading" secondItem="V8K-m4-YtJ" secondAttribute="leading" constant="80" id="J2D-LW-1BF"/>
+                            <constraint firstItem="V8K-m4-YtJ" firstAttribute="trailing" secondItem="p5O-Sl-pqP" secondAttribute="trailing" constant="20" id="WB5-oT-qRF"/>
+                            <constraint firstItem="VOZ-gJ-clE" firstAttribute="top" secondItem="FI0-HR-GT5" secondAttribute="bottom" constant="10" id="XWG-qE-WeE"/>
+                            <constraint firstItem="Zdt-kd-jFk" firstAttribute="top" secondItem="V8K-m4-YtJ" secondAttribute="top" constant="20" id="a0F-JG-YkU"/>
+                            <constraint firstItem="V8K-m4-YtJ" firstAttribute="trailing" secondItem="VOZ-gJ-clE" secondAttribute="trailing" constant="80" id="c3A-pA-Xai"/>
+                            <constraint firstItem="V8K-m4-YtJ" firstAttribute="trailing" secondItem="FI0-HR-GT5" secondAttribute="trailing" constant="80" id="cRE-sG-Aip"/>
+                            <constraint firstItem="tCe-Yv-Zmm" firstAttribute="top" secondItem="V8K-m4-YtJ" secondAttribute="top" constant="80" id="fjL-xV-ffx"/>
+                            <constraint firstItem="p5O-Sl-pqP" firstAttribute="leading" secondItem="V8K-m4-YtJ" secondAttribute="leading" constant="20" id="gG5-Ja-2Bs"/>
+                            <constraint firstItem="p5O-Sl-pqP" firstAttribute="top" secondItem="tCe-Yv-Zmm" secondAttribute="bottom" constant="40" id="sno-tI-EgT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="V8K-m4-YtJ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Task" id="U2v-n4-0YQ"/>
+                    <connections>
+                        <outlet property="priorityControl" destination="tCe-Yv-Zmm" id="mrn-Vy-8va"/>
+                        <outlet property="saveBtn" destination="FI0-HR-GT5" id="6dc-Ze-bXV"/>
+                        <outlet property="textField" destination="p5O-Sl-pqP" id="TVk-5W-62j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wq-Fv-vJE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
