@@ -13,7 +13,6 @@ class CreateNewTaskVC: UIViewController {
     @IBOutlet weak var priorityControl: UISegmentedControl!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +22,11 @@ class CreateNewTaskVC: UIViewController {
     }
     
     @IBAction func onSaveBtnTapped() {
+        guard let priority = Priority(rawValue: priorityControl.selectedSegmentIndex),
+              let text     = textField.text else { return }
+        
+        let task = Task(task: text, priority: priority)
+        
         
     }
 

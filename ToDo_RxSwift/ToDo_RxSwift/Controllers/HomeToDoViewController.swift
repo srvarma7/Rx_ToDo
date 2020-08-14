@@ -20,6 +20,7 @@ class HomeToDoViewController: UIViewController, UITableViewDelegate {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+        
     }
 
 }
